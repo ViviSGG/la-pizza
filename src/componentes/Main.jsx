@@ -1,11 +1,27 @@
-import React from "react"
+import React, {useState} from "react"
 import Cuma from "../assets/img-la-pizza/cuma.png"
 import Banana from "../assets/img-la-pizza/banana.png"
 import Menta from "../assets/img-la-pizza/menta.png"
 import Toca from "../assets/img-la-pizza/toca.png"
 import Prato from "../assets/img-la-pizza/prato.png"
+import Carrinho from '../assets/img-la-pizza/carrinho.png'
 
 function Main() {
+
+    const [quantidade, setQuantidade] = useState(0);
+    const [pizza, setPizza] = useState("");
+    const [pizzaImagem, setPizzaImagem] = useState();
+
+    const pizzaCuma = () => {
+        setPizza = ("La Cuma")
+        setPizzaImagem = (Cuma)
+    }
+
+    const pizzaBanana = () => {
+        setPizza = ("La Bana")
+        setPizzaImagem = (Banana)
+    }
+
     return (
         <>
             <main>
@@ -22,7 +38,7 @@ function Main() {
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <h3>R$23</h3>
                             </div>
-                            <button className="button-card">Comprar agora</button>
+                            <button className="button-card" onClick={pizzaCuma}>Comprar agora</button>
                         </div>
                         <div className="card">
                             <img className="img-card" src={Menta} alt="" />
@@ -40,7 +56,7 @@ function Main() {
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <h3>R$23</h3>
                             </div>
-                            <button className="button-card">Comprar agora</button>
+                            <button className="button-card" onClick={pizzaBanana}>Comprar agora</button>
                         </div>
                         <div className="card">
                             <img className="img-card" src={Toca} alt="" />
@@ -63,6 +79,14 @@ function Main() {
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce quis justo sem. Donec consequat, nunc a dapibus dapibus, justo dolor tristique tortor, sit amet tincidunt lorem nisl at ex. Cras dolor purus, varius in euismod pretium, finibus nec mi. Curabitur aliquam pharetra lectus in pharetra. Nullam viverra elementum neque quis fermentum.</p>
                             <button>Ler mais</button>
                         </section>
+                    </section>
+                </section>
+                <section className="compras">
+                    <img id="carrinho" src={Carrinho} alt="" />
+                    <p>Itens no carrinho ({quantidade})</p>
+                    <section className="itens">
+                        <h3>{pizza}</h3>
+                        <img src={pizzaImagem} alt="" />
                     </section>
                 </section>
             </main>

@@ -1,8 +1,8 @@
 header {
     display: flex;
     justify-content: center;
-    height: 8vh;
-    background-color: #5C913B;
+    height: 10vh;
+    background-color: #162d08;
 }
 
 nav {
@@ -114,6 +114,7 @@ button {
 .box3 {
     display: flex;
     justify-content: center;
+    padding: 4vh;
 }
 
 .content-box3 {
@@ -154,5 +155,25 @@ footer {
     justify-content: center;
     align-items: center;
     height: 8vh;
-    color: #2E2E2E;
+    color: white;
+    background-color: #162d08;
+}
+
+.compras {
+    display: flex;
+    background-color: #5C913B;
+    position: fixed;
+    width: 250px;
+    bottom: 0;
+    right: 10px;
+    border-radius: 6px 6px 0 0;
+    padding: 14px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#carrinho {
+    width: 18px;
 }
