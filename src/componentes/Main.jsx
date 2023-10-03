@@ -9,17 +9,24 @@ import Carrinho from '../assets/img-la-pizza/carrinho.png'
 function Main() {
 
     const [quantidade, setQuantidade] = useState(0);
-    const [pizza, setPizza] = useState("");
-    const [pizzaImagem, setPizzaImagem] = useState();
+    const [pizza, setPizza] = useState("Menta");
+    const [preco, setPreco] = useState("R$23")
+    const [pizzaImagem, setPizzaImagem] = useState(Menta);
 
-    const pizzaCuma = () => {
+    function somar() {
+        setQuantidade(quantidade + 1)
+    }
+
+    function pizzaCuma () {
         setPizza = ("La Cuma")
         setPizzaImagem = (Cuma)
+        setPreco = ("R$23")
     }
 
     const pizzaBanana = () => {
         setPizza = ("La Bana")
         setPizzaImagem = (Banana)
+        setPreco = ("R$23")
     }
 
     return (
@@ -38,7 +45,7 @@ function Main() {
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <h3>R$23</h3>
                             </div>
-                            <button className="button-card" onClick={pizzaCuma}>Comprar agora</button>
+                            <button className="button-card" onClick={pizzaCuma, somar}>Comprar agora</button>
                         </div>
                         <div className="card">
                             <img className="img-card" src={Menta} alt="" />
@@ -82,12 +89,18 @@ function Main() {
                     </section>
                 </section>
                 <section className="compras">
-                    <img id="carrinho" src={Carrinho} alt="" />
-                    <p>Itens no carrinho ({quantidade})</p>
+                    <div className="title">
+                        <img id="carrinho" src={Carrinho} alt="" />
+                        <p>Itens no carrinho ({quantidade})</p>
+                    </div>
                     <section className="itens">
-                        <h3>{pizza}</h3>
+                        <div>
+                            <h3>{pizza}</h3>
+                            <h4>{preco}</h4>
+                        </div>
                         <img src={pizzaImagem} alt="" />
                     </section>
+                    <button>Comprar</button>
                 </section>
             </main>
         </>
