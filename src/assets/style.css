@@ -14,9 +14,19 @@ nav {
 
 ul {
     display: flex;
-    width: 30vw;
+    width: 26vw;
     justify-content: space-between;
     list-style: none;
+}
+
+li {
+    font-size: 14px;
+    line-height: 28px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
+li:hover, #home {
+    border-bottom: 2px solid white;
 }
 
 header a {
@@ -92,6 +102,10 @@ h1 {
     border: none;
 }
 
+.box2 button:hover, .box3 button:hover {
+    background-color: #e68d26;
+}
+
 .img-card {
     position: relative;
     bottom: 34px;
@@ -157,6 +171,7 @@ footer {
     height: 8vh;
     color: white;
     background-color: #5C913B;
+    font-size: 14px;
 }
 
 .compras {
@@ -184,6 +199,10 @@ footer {
     margin-bottom: 10px;
 }
 
+.compras button:hover {
+    background-color: #407122;
+}
+
 .title {
     display: flex;
     gap: 10px;
@@ -197,7 +216,7 @@ footer {
 .itens {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     background-color: white;
     color: #162d08;

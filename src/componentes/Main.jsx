@@ -9,24 +9,36 @@ import Carrinho from '../assets/img-la-pizza/carrinho.png'
 function Main() {
 
     const [quantidade, setQuantidade] = useState(0);
-    const [pizza, setPizza] = useState("Menta");
-    const [preco, setPreco] = useState("R$23")
-    const [pizzaImagem, setPizzaImagem] = useState(Menta);
+    const [pizza, setPizza] = useState("Carrinho vazio");
+    const [preco, setPreco] = useState("")
+    const [pizzaImagem, setPizzaImagem] = useState();
 
     function somar() {
         setQuantidade(quantidade + 1)
     }
 
-    function pizzaCuma () {
-        setPizza = ("La Cuma")
-        setPizzaImagem = (Cuma)
-        setPreco = ("R$23")
+    const pizzaCuma = () => {
+        setPizza("La Cuma")
+        setPizzaImagem(Cuma)
+        setPreco("R$23")
+    }
+
+    const pizzaMenta = () => {
+        setPizza("La Menta")
+        setPizzaImagem(Menta)
+        setPreco("R$23")
     }
 
     const pizzaBanana = () => {
-        setPizza = ("La Bana")
-        setPizzaImagem = (Banana)
-        setPreco = ("R$23")
+        setPizza("La Bana")
+        setPizzaImagem(Banana)
+        setPreco("R$23")
+    }
+
+    const pizzaToca = () => {
+        setPizza("La Toca")
+        setPizzaImagem(Toca)
+        setPreco("R$23")
     }
 
     return (
@@ -45,7 +57,7 @@ function Main() {
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <h3>R$23</h3>
                             </div>
-                            <button className="button-card" onClick={pizzaCuma, somar}>Comprar agora</button>
+                            <button className="button-card" onClick={() => {pizzaCuma(); somar()}}>Comprar agora</button>
                         </div>
                         <div className="card">
                             <img className="img-card" src={Menta} alt="" />
@@ -54,7 +66,7 @@ function Main() {
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <h3>R$23</h3>
                             </div>
-                            <button className="button-card">Comprar agora</button>
+                            <button className="button-card" onClick={() => {pizzaMenta(); somar()}}>Comprar agora</button>
                         </div>
                         <div className="card">
                             <img className="img-card" src={Banana} alt="" />
@@ -63,7 +75,7 @@ function Main() {
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <h3>R$23</h3>
                             </div>
-                            <button className="button-card" onClick={pizzaBanana}>Comprar agora</button>
+                            <button className="button-card" onClick={() => {pizzaBanana(), somar()}}>Comprar agora</button>
                         </div>
                         <div className="card">
                             <img className="img-card" src={Toca} alt="" />
@@ -72,7 +84,7 @@ function Main() {
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <h3>R$23</h3>
                             </div>
-                            <button className="button-card">Comprar agora</button>
+                            <button className="button-card" onClick={() => {pizzaToca(); somar()}}>Comprar agora</button>
                         </div>
                     </section>
                 </section>
