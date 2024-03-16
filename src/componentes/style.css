@@ -224,7 +224,7 @@ footer {
     width: 100%;
     margin-bottom: 8px;
 }
-/*
+
 .modal {
     position: fixed;
     top: 0;
@@ -234,22 +234,118 @@ footer {
 }
 
 .box-modal {
+    display: flex;
     position: absolute;
     right: 20vw;
-    top: 20vh;
+    top: 5vh;
     background-color: white;
     width: 60vw;
-    height: 60vh;
+    height: 90vh;
     border-radius: 25px;
     padding: 25px;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.div-modal {
-    flex-wrap: wrap;
-}
-
-.div-modal figure {
+.top-modal {
+    /* border: #e68d26 2px solid; */
     display: flex;
-    border: red 2px solid;    
+    justify-content: space-between;
 }
-*/
+
+.main-modal {
+    display: flex; 
+    justify-content: space-between;
+}
+
+.main-modal .sub-box1, .main-modal .sub-box2 {
+    border: 2px solid rgb(218, 218, 218);
+    /* box-shadow: 2px 2px 2px #ffe1da; */
+    width: 48%;
+    padding: 1.5rem;
+    border-radius: 25px;
+    gap: 0.5rem;
+}
+
+.main-modal .sub-box1 {
+    display: flex;
+    flex-direction: column;
+    /* gap: 8px; */
+    /* gap: 0.6rem; */
+}
+
+.main-modal .sub-box1 figure {
+    display: flex;
+    border: rgb(218, 218, 218) 2px solid; 
+    border-radius: 20px;   
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.main-modal .sub-box1 figure img {
+    width: 100px;
+}
+
+.sub-box1-div1 {
+    /* border: #e68d26 2px solid; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    /* margin-left: 1vw; */
+}
+
+.sub-box1-div2 button {
+    width: 24px;
+    height: 24px;
+}
+
+.sub-box1-div2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-modal .sub-box2 {
+    display: flex;
+    flex-direction: column;
+    /* gap: 1rem; */
+}
+
+.main-modal .sub-box2 div {
+    display: flex;
+    flex-direction: column;
+}
+
+select, input, option {
+    height: 30px;
+    padding: 0 6px;
+}
+
+.checkbox-whats {
+    /* border: 2px solid; */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.footer-modal {
+    display: flex;
+    /* border: 2px solid pink; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-modal div {
+    display: flex;
+}
+
+.footer-modal button {
+    height: 40px;
+    width: 240px;
+    border-radius: 25px;
+    border: none;
+    background-color: #407122;
+    color: white;
+}

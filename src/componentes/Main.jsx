@@ -4,7 +4,8 @@ import Banana from "../assets/img-la-pizza/banana.png"
 import Menta from "../assets/img-la-pizza/menta.png"
 import Toca from "../assets/img-la-pizza/toca.png"
 import Prato from "../assets/img-la-pizza/prato.png"
-import Carrinho from '../assets/img-la-pizza/carrinho.png'
+import Carrinho from "../assets/img-la-pizza/carrinho.png"
+import Fechar from "../assets/img-la-pizza/fechar.png"
 import "./style.css"
 
 function Main() {
@@ -15,6 +16,10 @@ function Main() {
     const [pizzaBanana, setPizzaBanana] = useState(0);
     const [pizzaToca, setPizzaToca] = useState(0);
     const sabores = [];
+
+    function somar() {
+        setQuantidade(quantidade + 1)
+    }
 
     function compra(valor) {
         if (valor == "Cuma") {
@@ -29,8 +34,17 @@ function Main() {
         console.log(pizzaCuma, pizzaMenta, pizzaBanana, pizzaToca);
     }
 
-    function somar() {
-        setQuantidade(quantidade + 1)
+    function retirar(valor) {
+        if (valor == "Cuma") {
+            setPizzaCuma(pizzaCuma - 1);
+        } else if (valor == "Menta") {
+            setPizzaMenta(pizzaMenta - 1);
+        } else if (valor == "Bana") {
+            setPizzaBanana(pizzaBanana - 1);
+        } else if (valor == "Toca") {
+            setPizzaToca(pizzaToca - 1);
+        }
+        console.log(pizzaCuma, pizzaMenta, pizzaBanana, pizzaToca);
     }
 
     function visualizar() {
@@ -50,33 +64,6 @@ function Main() {
         }
         console.log(sabores);    
     }
-
-    /*
-    const pizzaCuma = () => {
-        setPizza("La Cuma")
-        setPizzaImagem(Cuma)
-        setPreco("R$23")
-    }
-
-    const pizzaMenta = () => {
-        setPizza("La Menta")
-        setPizzaImagem(Menta)
-        setPreco("R$23")
-    }
-    
-
-    const pizzaBanana = () => {
-        setPizza("La Bana")
-        setPizzaImagem(Banana)
-        setPreco("R$23")
-    }
-
-    const pizzaToca = () => {
-        setPizza("La Toca")
-        setPizzaImagem(Toca)
-        setPreco("R$23")
-    }
-    */
 
     return (
         <>
@@ -153,21 +140,77 @@ function Main() {
                 </section>
                 <section className="modal">
                     <section className="box-modal">
-                        <h2>Carrinho</h2>
-                        <h3>Itens:</h3>
-                        <div className="div-modal">
-                            {
-                                sabores.map((item) => (
-                                    <>
-                                        <figure>
-                                            <img src={item.img} alt="" />
-                                            <figcaption>{item.sabor}</figcaption>
-                                            <h4>{item.quant}</h4>
-                                        </figure>
-                                </> 
-                                )
-                            )}
-                        </div>
+                        <section className="top-modal">
+                            <div>
+                                <h2>Carrinho</h2>
+                                <h3>Itens:</h3>
+                            </div>
+                            <div>
+                                <img width={32} src={Fechar} alt="" />
+                            </div>
+                        </section>
+                        <section className="main-modal">
+                            <section className="sub-box1">
+                                {
+                                    sabores.map((item) => (
+                                        <>
+                                            <figure>
+                                                <img src={item.img} alt="" />
+                                                <div className="sub-box1-div1">
+                                                    <figcaption>{item.sabor}</figcaption>
+                                                    <h4>{item.quant} unidade(s)</h4>
+                                                </div>
+                                                <div className="sub-box1-div2">
+                                                    <button>-</button>
+                                                    <button>+</button>
+                                                </div>
+                                            </figure>
+                                    </> 
+                                    )
+                                )}
+                            </section>
+                            <section className="sub-box2">
+                                <div>
+                                    <label htmlFor="">Estado *</label>
+                                    <input type="text" name="" id="" placeholder="Pernambuco" disabled />
+                                </div>
+                                <div>
+                                    <label htmlFor="">Cidade *</label>
+                                    <select name="" id="">
+                                        <option value="">Recife</option>
+                                        <option value="">Olinda</option>
+                                        <option value="">Jaboatão</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label htmlFor="">Rua *</label>
+                                    <input type="text" name="" id="" />
+                                </div>
+                                <div>
+                                    <label htmlFor="">Número *</label>
+                                    <input type="text" name="" id="" />
+                                </div>
+                                <div>
+                                    <label htmlFor="">Bloco</label>
+                                    <input type="text" name="" id="" />
+                                </div>
+                                <div>
+                                    <label htmlFor="">Celular</label>
+                                    <input type="tel" name="" id="" />
+                                </div>
+                                <section className="checkbox-whats">
+                                    <input type="checkbox" name="" id="" />
+                                    <label htmlFor="">É o número do WhatsApp.</label>
+                                </section>
+                            </section>
+                        </section>
+                        <section className="footer-modal">
+                            <div>
+                                <h4>Total: R$</h4>
+                                <h4>{quantidade * 23}</h4>
+                            </div>
+                            <button>Comprar</button>
+                        </section>
                     </section>
                 </section>
             </main>
