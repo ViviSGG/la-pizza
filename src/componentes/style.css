@@ -139,7 +139,7 @@ h1 {
 }
 
 .mesas {
-    background-image: url("./img-la-pizza/mesas.png");
+    background-image: url("../assets/img-la-pizza/mesas.png");
     width: 30vw;
     height: 64vh;
     background-size: cover;
@@ -224,3 +224,32 @@ footer {
     width: 100%;
     margin-bottom: 8px;
 }
+/*
+.modal {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.50);
+}
+
+.box-modal {
+    position: absolute;
+    right: 20vw;
+    top: 20vh;
+    background-color: white;
+    width: 60vw;
+    height: 60vh;
+    border-radius: 25px;
+    padding: 25px;
+}
+
+.div-modal {
+    flex-wrap: wrap;
+}
+
+.div-modal figure {
+    display: flex;
+    border: red 2px solid;    
+}
+*/

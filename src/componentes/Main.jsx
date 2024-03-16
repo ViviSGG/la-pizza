@@ -5,18 +5,53 @@ import Menta from "../assets/img-la-pizza/menta.png"
 import Toca from "../assets/img-la-pizza/toca.png"
 import Prato from "../assets/img-la-pizza/prato.png"
 import Carrinho from '../assets/img-la-pizza/carrinho.png'
+import "./style.css"
 
 function Main() {
 
-    const [quantidade, setQuantidade] = useState(0);
-    const [pizza, setPizza] = useState("Carrinho vazio");
-    const [preco, setPreco] = useState("")
-    const [pizzaImagem, setPizzaImagem] = useState();
+    const [quantidade, setQuantidade] = useState(0);    
+    const [pizzaCuma, setPizzaCuma] = useState(0);
+    const [pizzaMenta, setPizzaMenta] = useState(0);
+    const [pizzaBanana, setPizzaBanana] = useState(0);
+    const [pizzaToca, setPizzaToca] = useState(0);
+    const sabores = [];
+
+    function compra(valor) {
+        if (valor == "Cuma") {
+            setPizzaCuma(pizzaCuma + 1);
+        } else if (valor == "Menta") {
+            setPizzaMenta(pizzaMenta + 1);
+        } else if (valor == "Bana") {
+            setPizzaBanana(pizzaBanana + 1);
+        } else if (valor == "Toca") {
+            setPizzaToca(pizzaToca + 1);
+        }
+        console.log(pizzaCuma, pizzaMenta, pizzaBanana, pizzaToca);
+    }
 
     function somar() {
         setQuantidade(quantidade + 1)
     }
 
+    function visualizar() {
+        if (pizzaCuma > 0) {
+            sabores.push({sabor: "Cuma", quant: pizzaCuma, img: Cuma});
+        }
+        if (pizzaMenta > 0) {
+            sabores.push({sabor: "Menta", quant: pizzaMenta, img: Menta});
+
+        }
+        if (pizzaBanana > 0 ){
+            sabores.push({sabor: "Banana", quant: pizzaBanana, img: Banana});
+
+        }
+        if (pizzaToca > 0){
+            sabores.push({sabor: "Toca", quant: pizzaToca, img: Toca});
+        }
+        console.log(sabores);    
+    }
+
+    /*
     const pizzaCuma = () => {
         setPizza("La Cuma")
         setPizzaImagem(Cuma)
@@ -28,6 +63,7 @@ function Main() {
         setPizzaImagem(Menta)
         setPreco("R$23")
     }
+    
 
     const pizzaBanana = () => {
         setPizza("La Bana")
@@ -40,6 +76,7 @@ function Main() {
         setPizzaImagem(Toca)
         setPreco("R$23")
     }
+    */
 
     return (
         <>
@@ -57,7 +94,7 @@ function Main() {
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <h3>R$23</h3>
                             </div>
-                            <button className="button-card" onClick={() => {pizzaCuma(); somar()}}>Comprar agora</button>
+                            <button className="button-card" onClick={() => {compra("Cuma"), somar()}}>Comprar agora</button>
                         </div>
                         <div className="card">
                             <img className="img-card" src={Menta} alt="" />
@@ -66,7 +103,7 @@ function Main() {
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <h3>R$23</h3>
                             </div>
-                            <button className="button-card" onClick={() => {pizzaMenta(); somar()}}>Comprar agora</button>
+                            <button className="button-card" onClick={() => {compra("Menta"), somar()}}>Comprar agora</button>
                         </div>
                         <div className="card">
                             <img className="img-card" src={Banana} alt="" />
@@ -75,7 +112,7 @@ function Main() {
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <h3>R$23</h3>
                             </div>
-                            <button className="button-card" onClick={() => {pizzaBanana(), somar()}}>Comprar agora</button>
+                            <button className="button-card" onClick={() => {compra("Bana"), somar()}}>Comprar agora</button>
                         </div>
                         <div className="card">
                             <img className="img-card" src={Toca} alt="" />
@@ -84,7 +121,7 @@ function Main() {
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                                 <h3>R$23</h3>
                             </div>
-                            <button className="button-card" onClick={() => {pizzaToca(); somar()}}>Comprar agora</button>
+                            <button className="button-card" onClick={() => {compra("Toca"), somar()}}>Comprar agora</button>
                         </div>
                     </section>
                 </section>
@@ -107,12 +144,31 @@ function Main() {
                     </div>
                     <section className="itens">
                         <div>
-                            <h3>{pizza}</h3>
-                            <h4>{preco}</h4>
+                            <h3>{pizzaCuma} {pizzaMenta} {pizzaBanana} {pizzaToca}</h3>
+                            {/* <h4>{preco}</h4> */}
                         </div>
-                        <img src={pizzaImagem} alt="" />
+                        {/* <img src={pizzaImagem} alt="" /> */}
                     </section>
-                    <button>Comprar</button>
+                    <button onClick={visualizar()}>Ver carrinho</button>
+                </section>
+                <section className="modal">
+                    <section className="box-modal">
+                        <h2>Carrinho</h2>
+                        <h3>Itens:</h3>
+                        <div className="div-modal">
+                            {
+                                sabores.map((item) => (
+                                    <>
+                                        <figure>
+                                            <img src={item.img} alt="" />
+                                            <figcaption>{item.sabor}</figcaption>
+                                            <h4>{item.quant}</h4>
+                                        </figure>
+                                </> 
+                                )
+                            )}
+                        </div>
+                    </section>
                 </section>
             </main>
         </>
