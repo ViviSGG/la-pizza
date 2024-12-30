@@ -85,6 +85,7 @@ h1 {
     display: flex;
     flex-direction: column;
     width: 16vw;
+    padding: 8px;
     align-items: center;
     background-color: #ffe1da;
     border-radius: 25px;
@@ -96,7 +97,7 @@ h1 {
 
 .box2 button, .box3 button {
     background-color: #FFA200;
-    width: 150px;
+    width: 160px;
     height: 40px;
     border-radius: 25px;
     border: none;

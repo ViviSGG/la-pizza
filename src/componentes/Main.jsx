@@ -53,11 +53,9 @@ function Main() {
         }
         if (pizzaMenta > 0) {
             sabores.push({sabor: "Menta", quant: pizzaMenta, img: Menta});
-
         }
         if (pizzaBanana > 0 ){
             sabores.push({sabor: "Banana", quant: pizzaBanana, img: Banana});
-
         }
         if (pizzaToca > 0){
             sabores.push({sabor: "Toca", quant: pizzaToca, img: Toca});
@@ -131,14 +129,14 @@ function Main() {
                     </div>
                     <section className="itens">
                         <div>
-                            <h3>{pizzaCuma} {pizzaMenta} {pizzaBanana} {pizzaToca}</h3>
+                            {/* <h3>{pizzaCuma} {pizzaMenta} {pizzaBanana} {pizzaToca}</h3> */}
                             {/* <h4>{preco}</h4> */}
                         </div>
                         {/* <img src={pizzaImagem} alt="" /> */}
                     </section>
                     <button onClick={visualizar()}>Ver carrinho</button>
                 </section>
-                <section className="modal">
+                {/* <section className="modal">
                     <section className="box-modal">
                         <section className="top-modal">
                             <div>
@@ -212,7 +210,7 @@ function Main() {
                             <button>Comprar</button>
                         </section>
                     </section>
-                </section>
+                </section> */}
             </main>
         </>
     )
