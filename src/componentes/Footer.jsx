@@ -5,7 +5,7 @@ function Footer() {
     return (
         <>
             <footer>
-                <p>@ todos os direitos reservados</p>
+                <p>@ Todos os direitos reservados</p>
             </footer>
         </>
     )
