@@ -214,6 +214,11 @@ footer {
     width: 18px;
 }
 
+#nav-carrinho {
+    display: none;
+    width: 24px;
+}
+
 .itens {
     display: flex;
     flex-direction: row-reverse;
@@ -349,4 +354,47 @@ select, input, option {
     border: none;
     background-color: #407122;
     color: white;
+}
+
+@media (max-width: 1000px) {
+    
+    h1 {
+        color: white;
+        font-size: 56px;
+    }
+
+    .content-card {
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    ul {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        list-style: none;
+    }
+
+    #nav-carrinho {
+        display: inline;
+    }
+
+    .mesas {
+        display: none;
+    }
+
+    .descricao-restaurante {
+        width: 100%;
+        align-items: center;
+    }
+
+    .compras {
+        display: none;
+    }
 }
