@@ -39,7 +39,7 @@ header a {
     width: 100%;
     height: 50vh;
     background-image: linear-gradient(to bottom, #2e2e2e70, #2e2e2e70), url("src/assets/img-la-pizza/banner.png");
-    background-position: center;
+    background-position: bottom;
     background-repeat: no-repeat;
     background-size: cover;
     justify-content: center;
